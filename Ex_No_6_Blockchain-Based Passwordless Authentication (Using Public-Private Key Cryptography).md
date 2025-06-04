@@ -3,16 +3,35 @@
 To implement a secure passwordless authentication system using public-private key cryptography on Ethereum. This prevents phishing and password leaks.
 
 # Algorithm:
-Step 1: User Registration
-A user registers with their Ethereum public key (instead of a password).
+### Step 1:
+Start the Ethereum environment (such as Ganache, or a Testnet) and deploy the smart contract that manages user registration and authentication.
 
+### Step 2:
+User initiates registration by submitting their Ethereum public key to the smart contract.
 
-Step 2: Login Process
-When logging in, the user signs a random challenge message using their private key.
+### Step 3:
+The smart contract securely stores the public key associated with the user's account address.
 
+### Step 4:
+During login, the server (or smart contract) generates a random challenge message (e.g., a random string or nonce).
 
-The smart contract verifies the signature using the user’s public key.
+### Step 5:
+The server sends the challenge to the user’s client-side application.
 
+### Step 6:
+The user’s client-side application signs the challenge using their private key via cryptographic functions (e.g., web3.eth.personal.sign).
+
+### Step 7:
+The signed challenge (digital signature) is sent back to the server (or smart contract) for verification.
+
+### Step 8:
+The server (or smart contract) verifies the signature using the stored public key and checks whether the signature matches the original challenge.
+
+### Step 9:
+If the verification is successful, the user is authenticated successfully; otherwise, access is denied.
+
+### Step 10:
+End the process by granting access to authenticated users or sending an error message for failed authentication.
 
 
 # Program:
@@ -94,23 +113,41 @@ contract PasswordlessAuthDemo {
 ```
 
 # Expected Output:
-Users can register without a password.
 
+```
+Users can register without a password.
 
 Users sign a challenge with their private key for authentication.
 
-
 The smart contract verifies signatures to confirm identity.
+```
 
+![1](https://github.com/user-attachments/assets/1814a76a-0673-4ee7-857b-55273bf80d1b)
+
+![2](https://github.com/user-attachments/assets/5042cc2e-ed55-4297-a2e9-b1dd6fc65ac1)
+
+![3](https://github.com/user-attachments/assets/4be48fbc-dc89-4e3c-85b3-eff7c0664e46)
+
+![4](https://github.com/user-attachments/assets/b8a0a046-ca7e-4d7e-99c4-6a825049e664)
+
+![5](https://github.com/user-attachments/assets/842ea949-88f3-4761-a35b-2973a4d4cf69)
+
+![6](https://github.com/user-attachments/assets/5fc0434f-78f1-44d1-a87d-3d6fbb9bcff9)
+
+![7](https://github.com/user-attachments/assets/7fba69f9-8035-427d-92ee-5b5e6c871a4b)
+
+![8](https://github.com/user-attachments/assets/2dbe4bcf-1252-4274-89d6-1a4c82fd1893)
 
 
 # High-Level Overview:
-Eliminates password hacks & phishing attacks.
 
+```
+Eliminates password hacks & phishing attacks.
 
 Uses Ethereum's built-in cryptographic functions.
 
-
 Inspired by Web3 login solutions like MetaMask authentication.
+```
 
 # RESULT: 
+Thus the Blockchain-Based Passwordless Authentication (Using Public-Private Key Cryptography) is successfully implemented.
